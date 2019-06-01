@@ -22,8 +22,10 @@ const Forum = props => {
         try {
             const response = await fetch('http://localhost:3200/message');
             const data = await response.json()
-            setMessages(data)
-            setLoading(false)
+            setTimeout(() => {
+                setMessages(data)
+                setLoading(false)
+            }, 1000);
         } catch (error) {
             console.log(error);
             setLoading(false);
