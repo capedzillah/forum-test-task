@@ -1,0 +1,17 @@
+.messages {
+    max-height: 500px;
+    overflow: auto;
+}
+.message {
+    background: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    margin: 0 0 15px;
+    padding: 15px 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+
+    &__title {
+        text-decoration: underline;
+        color: #007ddc;
+    }
+}

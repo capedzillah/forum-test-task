@@ -1,0 +1,14 @@
+<form class="login-block" [formGroup]="loginForm" (ngSubmit)="login()">
+    <h1>Авторизация</h1>
+    <label>
+      User name
+      <input class="form-control" type="text" placeholder="Username" formControlName="username" name="username" required/>
+    </label>
+    <label>
+      Password
+      <input class="form-control" type="password" placeholder="Password" formControlName="password" name="password" required/>
+    </label>
+    <button class="btn" [disabled]="loading">
+      Войти
+    </button>
+</form>

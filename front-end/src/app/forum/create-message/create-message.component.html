@@ -1,0 +1,13 @@
+<form class="form-group" [formGroup]="messageForm">
+    <label>
+      Заголовок
+      <input class="form-control" type="text" placeholder="Заголовок" formControlName="title" name="title" required/>
+    </label>
+    <label>
+      Текст сообщения
+      <input class="form-control" type="text" placeholder="Текст сообщения" formControlName="body" name="body" required/>
+    </label>
+    <button class="btn" [disabled]="loading">
+      Отправить
+    </button>
+</form>

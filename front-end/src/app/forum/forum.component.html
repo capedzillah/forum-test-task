@@ -1,0 +1,13 @@
+<div class="container">
+    
+    <app-create-message [messageForm]="messageForm" (submit)="createMessage()"></app-create-message>
+    <app-message-list [messages]="messages" *ngIf="!error"></app-message-list>
+    
+    <div class="overlay" *ngIf="loading">
+        <div class="spinner"></div>
+    </div>
+    <div *ngIf="error">
+        Ошибка загрузка данных
+    </div>
+
+</div>
