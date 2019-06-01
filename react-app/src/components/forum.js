@@ -56,25 +56,28 @@ const Forum = props => {
 
     return (
         <div className="container">
-            {loading && <div className="overlay" >
-                <div className="spinner"></div>
-            </div>}
-            <MessageForm
-                title={form.title}
-                body={form.body}
-                onSubmit={handleSubmitForm}
-                onChange={handleChangeForm}
-            />
-            <div className="messages">
-                {messages.map((message, index) => (
-                    // wrong key
-                    <Message key={index} {...message} count={messages.length} />
-                ))}
-                <p className="messages__count">
-                    <strong>
-                        Количество сообщений: { messages.length }
-                    </strong>
-                </p>
+            <div className="forum-wrapper">
+
+                {loading && <div className="overlay" >
+                    <div className="spinner"></div>
+                </div>}
+                <MessageForm
+                    title={form.title}
+                    body={form.body}
+                    onSubmit={handleSubmitForm}
+                    onChange={handleChangeForm}
+                />
+                <div className="messages">
+                    {messages.map((message, index) => (
+                        // wrong key
+                        <Message key={index} {...message} count={messages.length} />
+                    ))}
+                    <p className="messages__count">
+                        <strong>
+                            Количество сообщений: { messages.length }
+                        </strong>
+                    </p>
+                </div>
             </div>
             
         </div>
