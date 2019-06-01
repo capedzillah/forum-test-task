@@ -19,7 +19,6 @@ export class ForumComponent implements OnInit, OnDestroy {
   messages: Message[] = [];
   messageForm: FormGroup;
 
-
   private destroy$ = new Subject<void>();
 
   constructor(

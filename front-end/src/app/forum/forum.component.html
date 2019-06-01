@@ -1,5 +1,5 @@
 <div class="container">
-    
+        
     <app-create-message [messageForm]="messageForm" (submit)="createMessage()"></app-create-message>
     <app-message-list [messages]="messages" *ngIf="!error"></app-message-list>
     
