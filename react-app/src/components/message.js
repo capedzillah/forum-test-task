@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Message = ({ title, body, userName, count }) => {
+const Message = React.memo(({ title, body, userName, count }) => {
+
     return (
         <div className="message">
             <p className="message__username">Имя пользователя: { userName }</p>
@@ -10,7 +11,7 @@ const Message = ({ title, body, userName, count }) => {
         </div>
         
     )
-}
+})
 
 Message.propTypes = {
     title: PropTypes.string,
