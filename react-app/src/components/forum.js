@@ -10,6 +10,7 @@ const Forum = props => {
     const [messages, setMessages] = useState([])
     const [form, setForm] = useState({ title: '', body: '' })
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     const context = useContext(UserContext);
 
@@ -27,7 +28,7 @@ const Forum = props => {
                 setLoading(false)
             }, 1000);
         } catch (error) {
-            console.log(error);
+            setError(true);
             setLoading(false);
         }
     }
@@ -69,7 +70,7 @@ const Forum = props => {
                     onSubmit={handleSubmitForm}
                     onChange={handleChangeForm}
                 />
-                <div className="messages">
+                { !error ? <div className="messages">
                     {messages.map((message, index) => (
                         // wrong key
                         <Message key={index} {...message} count={messages.length} />
@@ -79,7 +80,9 @@ const Forum = props => {
                             Количество сообщений: { messages.length }
                         </strong>
                     </p>
-                </div>
+                </div> 
+                : <div>Ошибка загрузки данных </div>    
+                }
             </div>
             
         </div>
